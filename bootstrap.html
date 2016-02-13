@@ -8,13 +8,13 @@
 
     <!-- switch commented/uncommented links and scripts to use cdn or local versions -->    
 
-    <!-- Uncomment dto use CDN -->
+    <!-- Uncomment to use CDN -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/sandstone/bootstrap.min.css" /> -->
     <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> -->
     <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 
-    <!-- Uncomment to use local -->
+    <!-- Uncomment to use local (bower installed) components -->
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script> 
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -31,14 +31,15 @@
       <div class="row">
         <div class="col-sm-4">
           <h3>Column 1</h3>
-          <img src="http://www.w3schools.com/bootstrap/paris.jpg" class="img-rounded">
+          <img src="http://www.w3schools.com/bootstrap/paris.jpg" class="img-rounded img-responsive">
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-md-push-4 hidden-xs">
           <h3>Column 2</h3>
-          <img src="http://www.w3schools.com/bootstrap/paris.jpg" class="img-circle">
+          <p> This is a nice little text column that should not show up in xs devices. In small devices, it should appear between the images, and in medium devices and up, it should appear to the right of the images.
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-md-pull-4">
           <h3>Column 3</h3>
+          <img src="http://www.w3schools.com/bootstrap/paris.jpg" class="img-circle img-responsive">
         </div>
       </div>
 
