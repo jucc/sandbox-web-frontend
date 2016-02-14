@@ -35,7 +35,15 @@
           <ul class="nav  navbar-nav navbar-right">
             <li> <a href="#">First thing</a></li>
             <li> <a href="#">Second thing</a></li>
-            <li> <a href="#">Too many things</a></li>
+            <li class="dropdown"> 
+              <a data-toggle="dropdown" data-target="#">Too many things <b class="caret"></b></a><!--data-target instead of href keeps links intact -->
+              <ul class="dropdown-menu">
+                <li><a href="#">Link to 3.1.A</a></li>
+                <li><a href="#">Link to 3.1.B</a></li>
+                <li class="divider">
+                <li><a href="#">Link to 3.2.A</a></li>
+              </ul>
+            </li>
             <li class="active"> <a href="#">Current</a></li>            
           </ul>
         </div>
