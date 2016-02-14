@@ -16,8 +16,7 @@
 
     <!-- not going into a separate file because this is just a sandbox ;) -->
     <style>
-      .glyphicon 
-      {
+      .glyphicon       {
         font-size: 2em;
         display: block;
         text-align: center;
@@ -99,6 +98,34 @@
       </a>
     </div>
 
+    <!-- MODAL WITH FORM -->
+
+    <div class="modal fade" id="testmodal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">This is a modal</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form"> <!-- or form-inline -->
+              <div class="form-group">                       
+                <label class="sr-only" for="mobilePhone">Mobile Phone</label> <!-- accessible for screen readers only -->
+                <input type="tel" class="form-control" id="mobilePhone" placeholder="mobile phone">              
+              </div>
+              <div class="form-group">
+                <select class="form-control">
+                  <option> option 1 </option>
+                  <option> option 2 </option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" data-dismiss="modal"> Submit </button>
+            </form>          
+          </div>            
+        </div>        
+      </div>
+    </div>
+
     <div class="container"> <!-- if class="container-fluid", it would fill all page width -->
 
       <!-- GRID -->
@@ -118,6 +145,8 @@
           <b class="glyphicon glyphicon-picture"> </b>
           <h3>Column 3</h3>
           <img src="http://www.w3schools.com/bootstrap/paris.jpg" class="img-circle img-responsive">
+          <br/> <center>
+          <a class="btn btn-default" data-toggle="modal" href="#testmodal"> modal  window </a> </center>
         </div>
       </div>
 
