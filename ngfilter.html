@@ -1,0 +1,40 @@
+<!-- angular filter example from w3schools -->
+<!-- REF: http://www.w3schools.com/angular/angular_filters.asp -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script>
+    angular.module('myApp', []).controller('namesCtrl', function($scope) {
+      $scope.names = [
+        'Jani',
+        'Carl',
+        'Margareth',
+        'Hege',
+        'Joe',
+        'Gustav',
+        'Birgit',
+        'Mary',
+        'Kai'
+      ];
+    });
+  </script>
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="namesCtrl">
+
+    <p>Type a letter in the input field:</p>
+
+    <p><input type="text" ng-model="test"></p>
+
+    <ul>
+      <li ng-repeat="x in names | filter:test">
+        {{ x }}
+      </li>
+    </ul>
+  </div>
+  <p>The list will only consists of names matching the filter.</p>
+</body>
+</html>
