@@ -6,12 +6,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- switch commented/uncommented links and scripts to use cdn or local versions -->    
+    <!-- switch commented/uncommented links and scripts to use cdn or local versions -->
 
     <!-- Uncomment to use CDN -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+    <!--
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    -->
+
+    <!-- Uncomment to use local (bower installed) components -->
+
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 
     <!-- not going into a separate file because this is just a sandbox ;) -->
     <style>
@@ -26,19 +37,12 @@
         bottom: 0;
       }
       .carousel-indicators .active {
-        background-color: #345;
+        background-color: #eecc88;
       }
       .carousel-indicators .li {
-        border-color: #345;
+        border-color: #ff0000;
       }
     </style>
-
-    <!-- Uncomment to use local (bower installed) components -->
-    <!--
-      <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-      <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script> 
-      <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    -->    
   </head>
 
   <body style="padding-top:70px;"> <!-- style should be in a separate css file, but this is just a sandbox ;) -->
@@ -57,7 +61,7 @@
           <ul class="nav  navbar-nav navbar-right">
             <li> <a href="#">First thing</a></li>
             <li> <a href="#">Second thing</a></li>
-            <li class="dropdown"> 
+            <li class="dropdown">
               <a data-toggle="dropdown" data-target="#">Too many things <b class="caret"></b></a><!--data-target instead of href keeps links intact -->
               <ul class="dropdown-menu">
                 <li><a href="#">Link to 3.1.A</a></li>
@@ -66,7 +70,7 @@
                 <li><a href="#">Link to 3.2.A</a></li>
               </ul>
             </li>
-            <li class="active"> <a href="#">Current</a></li>            
+            <li class="active"> <a href="#">Current</a></li>
           </ul>
         </div>
       </div>
@@ -75,7 +79,7 @@
 
     <!-- CAROUSEL -->
 
-    <div id="jcarousel" class="carousel slide jumbotron">    
+    <div id="jcarousel" class="carousel slide jumbotron">
       <div class="container">
         <div>
           <ol class="carousel-indicators"> <!-- check styles above -->
@@ -85,15 +89,15 @@
           </ol>
         </div>
         <div class="carousel-inner"> <!-- nothing spills out -->
-          <div class="item active"> <h1>Welcome!!<small> This is just a sandbox</small></h1> </div>          
-          <div class="item"> <h1>But wait until I've got it!</h1> </div>          
+          <div class="item active"> <h1>Welcome!!<small> This is just a sandbox</small></h1> </div>
+          <div class="item"> <h1>But wait until I've got it!</h1> </div>
           <div class="item"> <h1>It will be gorgeous!!!</h1> </div>
         </div>
       </div>
-      <a class="left carousel-control" href="#jcarousel" data-slide="prev"> 
+      <a class="left carousel-control" href="#jcarousel" data-slide="prev">
         <span class="icon-prev"></span>
       </a>
-      <a class="right carousel-control" href="#jcarousel" data-slide="next"> 
+      <a class="right carousel-control" href="#jcarousel" data-slide="next">
         <span class="icon-next"></span>
       </a>
     </div>
@@ -109,9 +113,9 @@
           </div>
           <div class="modal-body">
             <form class="form"> <!-- or form-inline -->
-              <div class="form-group">                       
+              <div class="form-group">
                 <label class="sr-only" for="mobilePhone">Mobile Phone</label> <!-- accessible for screen readers only -->
-                <input type="tel" class="form-control" id="mobilePhone" placeholder="mobile phone">              
+                <input type="tel" class="form-control" id="mobilePhone" placeholder="mobile phone">
               </div>
               <div class="form-group">
                 <select class="form-control">
@@ -120,9 +124,9 @@
                 </select>
               </div>
               <button type="submit" class="btn btn-primary" data-dismiss="modal"> Submit </button>
-            </form>          
-          </div>            
-        </div>        
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -131,12 +135,12 @@
       <!-- GRID -->
 
       <div class="row">
-        <div class="col-sm-4">          
+        <div class="col-sm-4">
           <b class="glyphicon glyphicon-camera"> </b>
-          <h3>Column 1</h3>          
+          <h3>Column 1</h3>
           <img src="http://www.w3schools.com/bootstrap/paris.jpg" class="img-rounded img-responsive">
         </div>
-        <div class="col-sm-4 col-md-push-4 hidden-xs">          
+        <div class="col-sm-4 col-md-push-4 hidden-xs">
           <b class="glyphicon glyphicon-eye-close"> </b> <!-- check the css-styling above -->
           <h3>Column 2</h3>
           <p> This is a nice little text column that should not show up in xs devices. In small devices, it should appear between the images, and in medium devices and up, it should appear to the right of the images.
@@ -180,7 +184,7 @@
         </tbody>
       </table>
 
-      <!-- ALERTS --> 
+      <!-- ALERTS -->
 
       <div class="alert alert-success fade in">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
