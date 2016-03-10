@@ -1,0 +1,33 @@
+body {
+	padding-top: 70px; /* doesn't fall behind the navbar */
+}
+
+.navbar {
+	font-size:18px;
+}
+
+.jumbotron {
+	text-align: center;
+}
+
+.jumbotron img {
+	float: left;
+	margin-right: 30px;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: #fff9ee;
+}
+
+.datatools {
+	margin-bottom: 20px;
+}
+
+.datatools .add-button .glyphicon  {
+	font-size: 1.2em;
+}
+
+.text-right button {
+	margin-left: 3px;
+	margin-right: 3px;
+}
