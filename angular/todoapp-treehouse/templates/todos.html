@@ -1,0 +1,26 @@
+<div class="list">
+<h1>My TODOs</h1>
+<div class="add">
+  <a href="#" ng-click="addTodo()">+ Add a new task </a>
+</div>
+<div class="item" 
+     ng-repeat="todo in todos | orderBy: 'completed'"
+     ng-class="{ 'editing': editing, 'edited': todo.edited, 'completed': todo.completed }"
+     ng-init="todo.completed = false" >
+  <input ng-model="todo.completed" type="checkbox"/>
+  <!-- this span only allows a custom checkbox button using the css to replace the input checkbox, which is hidden there -->
+  <span ng-click="todo.completed = !todo.completed; todo.edited = true"></span> 
+  <label ng-hide="editing" ng-click="editing=true">{{todo.name}}</label>
+  <input class="editing-label" type="text"
+         ng-model="todo.name" 
+         ng-show="editing" 
+         ng-blur="editing=false" 
+         ng-change="todo.edited=true" 
+          />
+  <div class="actions">
+    <a href="#" ng-click="editing = !editing" >edit</a>
+    <a href="#" ng-click="saveTodos()">save</a>
+    <a href="#" ng-click="deleteTodo(todo, $index)" class="delete">delete</a>      
+  </div>
+</div>
+</div>
