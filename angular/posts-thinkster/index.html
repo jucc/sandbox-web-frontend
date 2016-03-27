@@ -1,0 +1,53 @@
+<html>
+<head>
+   <meta charset='utf-8'>
+   <title>Flapper News!</title>
+   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="style.css" media="screen">
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+   <script src="app.js"></script>
+</head>
+
+<body ng-app="flapperNews" ng-controller="MainCtrl as main">
+   <div class="container">
+
+      <div class="page-header">
+        <h1>Flapper News</h1>
+      </div>
+
+      <div class="row">
+
+         <div class="col-md-8">
+            <h3>Recent posts</h3>
+            <table>
+               <tr ng-repeat="post in main.posts | orderBy: '-upvotes'">
+                  <td class="txt">
+                     <a ng-show="post.link" href="{{post.link}}"> {{post.title}} </a>
+                     <span ng-hide="post.link"> {{post.title}} </span>
+                  </span></td>
+                  <td class="txt">[{{post.upvotes}}] </td>
+                  <td class="thumb"><span class="glyphicon glyphicon-thumbs-up" ng-click="main.incrementUpvotes(post);"></span></td>
+                  <td class="thumb"><span class="glyphicon glyphicon-thumbs-down" ng-click="main.decrementUpvotes(post);"></span></td>
+               </tr>
+            </table>
+         </div>
+
+         <div class="hidden-md hidden-lg"> <hr> </div>
+
+         <div class="col-md-4">
+            <form ng-submit="main.add();">
+               <h3>Add a new post</h3>
+               <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Title" ng-model="main.title"></input>
+               </div>
+               <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Link [optional]" ng-model="main.link"></input>
+               </div>
+               <button type="submit" class="btn btn-primary text-right">Post</button>
+            </form>
+         </div>
+
+      </div>
+   </div>
+</body>
+</html>

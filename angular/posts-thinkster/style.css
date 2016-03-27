@@ -1,0 +1,29 @@
+.glyphicon-thumbs-up, .glyphicon-thumbs-down { cursor:pointer }
+
+.glyphicon-thumbs-up:hover {
+   color: #33bb77;
+}
+
+.glyphicon-thumbs-down:hover {
+   color: #cc5533;
+}
+
+td {
+   font-size:20px;
+}
+
+td.thumb {
+   padding-right:7px;
+}
+
+td.txt {
+   padding-right:20px;
+}
+
+hr {
+   margin-bottom:35px; margin-top:35px;
+}
+
+h3 {
+   margin-bottom:17px;
+}
