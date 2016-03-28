@@ -1,0 +1,75 @@
+<!--
+  Based on thinkster's services tutorial:
+  https://thinkster.io/a-better-way-to-learn-angularjs/services
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS Services</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script type="text/javascript">
+
+    angular.module('app', []);
+
+    angular.module('app').factory('messages', function(){
+
+      var messages = {};
+      messages.list = [];
+
+      messages.add = function(msg){
+        messages.list.push({id: messages.list.length, text: msg});
+      };
+
+      return messages;
+    });
+
+
+    angular.module('app').controller('ListCtrl', ['messages', function (messages){
+
+      var self = this;
+      self.messages = messages.list;    // add message list to the controller's scope
+
+    }]);
+
+
+    angular.module('app').controller('PostCtrl', ['messages', function (messages){
+
+      var self = this;
+
+      self.msg = 'Hello World!';
+
+      self.addMessage = function(message){
+        if (message != '')
+        {
+          messages.add(message);
+          self.msg = '';
+        }
+      };
+
+    }]);
+
+  </script>
+</head>
+
+<body>
+
+  <div ng-app="app">
+    <h1>Services</h1>
+
+    <div ng-controller="ListCtrl as list">
+      <p ng-repeat="msg in list.messages">{{ msg.id }}: {{ msg.text }}</p>
+    </div>
+
+    <div ng-controller="PostCtrl as post">
+      <form ng-submit="post.addMessage(post.msg)">
+        <input type="text" ng-model="post.msg">
+        <button type="submit">Add Message</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
