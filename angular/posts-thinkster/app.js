@@ -1,6 +1,6 @@
 angular.module('flapperNews', [])
 
-   .controller('MainCtrl', ['$scope', function($scope){
+   .controller('MainCtrl', [function(){
 
       var self = this;
 
