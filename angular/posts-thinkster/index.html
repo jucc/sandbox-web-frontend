@@ -2,9 +2,9 @@
 <head>
    <meta charset='utf-8'>
    <title>Flapper News!</title>
-   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
    <link rel="stylesheet" href="style.css" media="screen">
-   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
    <script src="app.js"></script>
 </head>
 
@@ -24,7 +24,7 @@
                   <td class="txt">
                      <a ng-show="post.link" href="{{post.link}}"> {{post.title}} </a>
                      <span ng-hide="post.link"> {{post.title}} </span>
-                  </span></td>
+                  </td>
                   <td class="txt">[{{post.upvotes}}] </td>
                   <td class="thumb"><span class="glyphicon glyphicon-thumbs-up" ng-click="main.incrementUpvotes(post);"></span></td>
                   <td class="thumb"><span class="glyphicon glyphicon-thumbs-down" ng-click="main.decrementUpvotes(post);"></span></td>
