@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+  <script>
+  var app = angular.module('myApp', ['ngRoute']);
+
+  app.config(function($routeProvider){
+    $routeProvider.when("/",
+      {
+        templateUrl: "app.html",
+        controller: "AppCtrl",
+        controllerAs: "appct"
+      }
+    );
+  });
+
+  app.controller('AppCtrl', function() {
+    var self = this;
+    self.message = "The app routing is working!";
+  });
+  </script>
+</head>
+
+<body ng-app="myApp">
+  <div ng-view></div>
+</body>
+
+</html>
