@@ -53,42 +53,65 @@ angular.module('flapperNews', ['ui.router'])
    .controller('PostsCtrl', ['$stateParams', 'posts', function($stateParams, posts){
 
       var self = this;
+
       // $stateParams retrieves the info in the url such as posts/1/
       self.post = posts.posts[$stateParams.id];
+
+      self.addComment = function(){
+         if ( self.body === '' ) {
+            return;
+         }
+         if (!self.post.comments) {
+            self.post.comments = [];
+         }
+         self.post.comments.push({
+            body: self.body,
+            author: self.user,
+            upvotes: 0
+         });
+         self.body = '';
+         self.user = '';
+      };
+
    }])
 
    .factory('posts', [function(){
       var obj = {
          posts: [                      //mock posts
             {
+               id: 0,
                title: 'post 1',
                upvotes: 35,
                comments: [
                   {
                      author: 'Joe',
                      body: 'Cool post!',
-                     upvotes: 0
+                     upvotes: 2
                   },
                   {
                      author: 'Bob',
                      body: 'Great idea but everything is wrong!',
-                     upvotes: 0
+                     upvotes: 1
                   }
                ]
             },
             {
+               id: 1,
                title: 'post 2',
                upvotes: 13
             },
             {
+               id: 2,
                title: 'post 3',
                upvotes: 17
             },
             {
+               id: 3,
                title: 'post 4',
                upvotes: 9
             },
             {
+               id: 4,
                title: 'post 5',
                upvotes: 14
             }
