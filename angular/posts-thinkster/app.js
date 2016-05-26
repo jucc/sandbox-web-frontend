@@ -35,7 +35,8 @@ angular.module('flapperNews', ['ui.router'])
          self.posts.push({
             'title': self.title,
             'link': self.link,
-            'upvotes' : 0
+            'upvotes' : 0,
+            'id': self.posts.length
          });
          self.title = '';
          self.link = '';
