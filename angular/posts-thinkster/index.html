@@ -12,11 +12,12 @@
 </head>
 
 <body ng-app="flapperNews">
+
    <div class="container">
       <ui-view></ui-view>
    </div>
 
-   <!-- inline template for home -->
+   <!-- inline template for home. This could be in a separate file called home.html -->
 
    <script type="text/ng-template" id="/home.html">
 
@@ -37,6 +38,7 @@
                   <td class="txt">[{{post.upvotes}}] </td>
                   <td class="thumb"><span class="glyphicon glyphicon-thumbs-up" ng-click="main.incrementUpvotes(post);"></span></td>
                   <td class="thumb"><span class="glyphicon glyphicon-thumbs-down" ng-click="main.decrementUpvotes(post);"></span></td>
+                  <td class="thumb"> <a href="#/posts/{{$index}}"><span class="glyphicon glyphicon-comment" /></a></td>
                </tr>
             </table>
          </div>
@@ -57,6 +59,25 @@
          </div>
 
       </div>
+   </script>
+
+   <!-- inline template for posts. This could be in a separate file called posts.html -->
+
+   <script type="text/ng-template" id="/posts.html">
+
+      <div class="page-header">
+         <h3>
+            <a ng-show="detail.post.link" href="{{detail.post.link}}"> {{detail.post.title}} </a>
+            <span ng-hide="detail.post.link"> {{detail.post.title}} </span>
+         </h3>
+      </div>
+
+      <div ng-repeat="comment in detail.post.comments | orderBy:'-upvotes'">
+         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
+         {{comment.upvotes}} - by {{comment.author}}
+         <span style="font-size:20px; margin-left:10px;"> {{comment.body}} </span>
+      </div>
+
    </script>
 
 </body>
